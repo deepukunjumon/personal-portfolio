@@ -58,7 +58,7 @@ export default function Hero() {
             Contact Me
             <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-0.5" />
           </a>
-          <a href={profile.resume} download={profile.resumeFilename} className="btn btn-secondary">
+          <a href={profile.resume} className="btn btn-secondary">
             <DownloadIcon size={16} />
             Download Resume
           </a>

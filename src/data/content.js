@@ -14,8 +14,7 @@ export const profile = {
   whatsappNumber: '+91 80869 52858',
   instagram: 'https://www.instagram.com/deepu__kunjumon',
   instagramHandle: '@deepu__kunjumon',
-  resume: '/resume.pdf',
-  resumeFilename: 'Deepu-Kunjumon-Resume.pdf',
+  resume: 'https://drive.google.com/uc?export=download&id=1wkN1cAZVoyhbN_HcjTk8qPYsmuZ71wTb',
 }
 
 export const navLinks = [

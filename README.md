@@ -29,7 +29,11 @@ Vite inlines these at build time, so set them in your host's build settings too 
 
 ## Edit the content
 
-All copy - bio, skills, projects, experience, education, email and GitHub links - lives in `src/data/content.js`. The resume offered for download is `public/resume.pdf`.
+All copy - bio, skills, projects, experience, education, email and GitHub links - lives in `src/data/content.js`.
+
+## Update the resume
+
+The resume is not in this repo. "Download Resume" links to a file on Google Drive (`profile.resume` in `src/data/content.js`). To publish a new resume, open the file in Drive, choose File information → Manage versions → Upload new version. The link stays the same, so no commit or deploy is needed. The download is named after the file in Drive.
 
 ## Deploy
 
