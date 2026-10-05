@@ -1,3 +1,4 @@
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -7,11 +8,30 @@ import Experience from './components/Experience.jsx'
 import Education from './components/Education.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
-import SplashCursor from './components/SplashCursor.jsx'
 import { useTilt } from './hooks/useTilt.js'
+
+const SplashCursor = lazy(() => import('./components/SplashCursor.jsx'))
+
+function usePointerInUse() {
+  const [inUse, setInUse] = useState(false)
+
+  useEffect(() => {
+    const canRun =
+      window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!canRun) return
+
+    const onMove = () => setInUse(true)
+    window.addEventListener('mousemove', onMove, { once: true, passive: true })
+    return () => window.removeEventListener('mousemove', onMove)
+  }, [])
+
+  return inUse
+}
 
 export default function App() {
   useTilt()
+  const pointerInUse = usePointerInUse()
 
   return (
     <>
@@ -32,7 +52,11 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <SplashCursor />
+      {pointerInUse && (
+        <Suspense fallback={null}>
+          <SplashCursor />
+        </Suspense>
+      )}
     </>
   )
 }

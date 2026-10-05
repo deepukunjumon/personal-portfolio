@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 
-// Fluid "splash" trail that follows the pointer - a WebGL fluid simulation
-// (React Bits' SplashCursor). Decorative only: skipped under reduced motion
-// and when WebGL isn't available.
+const IDLE_MS = 3000
+
 export default function SplashCursor({
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
@@ -644,9 +643,24 @@ export default function SplashCursor({
     initFramebuffers()
     let lastUpdateTime = Date.now()
     let colorUpdateTimer = 0.0
+    let lastInputTime = 0
+    let running = false
+
+    // Called on every pointer input: (re)starts the loop if it has gone to sleep.
+    function wake() {
+      lastInputTime = Date.now()
+      if (running || !isActive) return
+      running = true
+      lastUpdateTime = Date.now()
+      frameId = requestAnimationFrame(updateFrame)
+    }
 
     function updateFrame() {
       if (!isActive) return
+      if (Date.now() - lastInputTime > IDLE_MS) {
+        running = false
+        return
+      }
       const dt = calcDeltaTime()
       if (resizeCanvas()) initFramebuffers()
       updateColors(dt)
@@ -905,12 +919,14 @@ export default function SplashCursor({
     }
 
     function handleMouseDown(e) {
+      wake()
       updatePointerDownData(scaleByPixelRatio(e.clientX), scaleByPixelRatio(e.clientY))
       clickSplat()
     }
 
     let firstMoveHandled = false
     function handleMouseMove(e) {
+      wake()
       const posX = scaleByPixelRatio(e.clientX)
       const posY = scaleByPixelRatio(e.clientY)
       if (!firstMoveHandled) {
@@ -923,11 +939,13 @@ export default function SplashCursor({
     }
 
     function handleTouchStart(e) {
+      wake()
       const touch = e.targetTouches[0]
       if (touch) updatePointerDownData(scaleByPixelRatio(touch.clientX), scaleByPixelRatio(touch.clientY))
     }
 
     function handleTouchMove(e) {
+      wake()
       const touch = e.targetTouches[0]
       if (touch)
         updatePointerMoveData(scaleByPixelRatio(touch.clientX), scaleByPixelRatio(touch.clientY), pointer.color)
@@ -938,7 +956,7 @@ export default function SplashCursor({
     window.addEventListener('touchstart', handleTouchStart, { passive: true })
     window.addEventListener('touchmove', handleTouchMove, { passive: true })
 
-    updateFrame()
+    wake()
 
     return () => {
       isActive = false
