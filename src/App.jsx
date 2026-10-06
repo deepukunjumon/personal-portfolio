@@ -9,6 +9,7 @@ import Education from './components/Education.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import { useTilt } from './hooks/useTilt.js'
+import { Analytics } from '@vercel/analytics/react'
 
 const SplashCursor = lazy(() => import('./components/SplashCursor.jsx'))
 
@@ -57,6 +58,7 @@ export default function App() {
           <SplashCursor />
         </Suspense>
       )}
+      <Analytics />
     </>
   )
 }
