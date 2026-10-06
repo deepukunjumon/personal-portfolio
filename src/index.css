@@ -77,6 +77,15 @@
     text-rendering: optimizeLegibility;
   }
 
+  a[href],
+  button:not(:disabled),
+  [role='button'],
+  label[for],
+  select,
+  summary {
+    cursor: pointer;
+  }
+
   ::selection {
     background: var(--accent-fill);
     color: var(--accent-ink);
