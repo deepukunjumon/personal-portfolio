@@ -10,6 +10,7 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import { useTilt } from './hooks/useTilt.js'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const SplashCursor = lazy(() => import('./components/SplashCursor.jsx'))
 
@@ -59,6 +60,7 @@ export default function App() {
         </Suspense>
       )}
       <Analytics />
+      <SpeedInsights />
     </>
   )
 }
