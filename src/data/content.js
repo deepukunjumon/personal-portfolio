@@ -4,7 +4,7 @@ export const profile = {
   role: 'Software Developer',
   stack: ['PHP', 'Laravel', 'Slim', 'React.js'],
   tagline:
-    'I build dependable web applications end to end - clean Laravel backends, well-shaped APIs, and React interfaces that feel fast and considered.',
+    'I build dependable web applications end to end — clean Laravel backends, well-shaped APIs, and React interfaces that feel fast and considered.',
   linkedin: 'https://www.linkedin.com/in/deepu-kunjumon',
   linkedinHandle: 'in/deepu-kunjumon',
   email: 'deepukunjumon1@gmail.com',
@@ -28,11 +28,11 @@ export const navLinks = [
 
 export const about = {
   paragraphs: [
-    'I’m a software developer at Acumen Capital Market India Ltd. in Kochi, with close to three years of professional experience. I work mostly in PHP - Laravel and Slim - on the server and React.js in the browser, building the internal and customer-facing systems a financial services company runs on.',
-    'I enjoy taking a feature from a rough idea to something shipped and maintainable - modelling the data properly, keeping the API predictable, and building an interface that stays out of the user’s way. Outside work I build my own full-stack projects to try new parts of the Laravel ecosystem.',
+    'I’m a software developer at Acumen Capital Market India Ltd. in Kochi, where I’ve worked since November 2023. I work mostly in PHP — Laravel and Slim — on the server and React.js in the browser, building the internal and customer-facing systems a financial services company runs on.',
+    'I enjoy taking a feature from a rough idea to something shipped and maintainable — modelling the data properly, keeping the API predictable, and building an interface that stays out of the user’s way. Outside work I build my own full-stack projects to try new parts of the Laravel ecosystem.',
   ],
   facts: [
-    { value: '3', unit: 'years', label: 'building for the web professionally' },
+    { value: '2023', unit: 'onward', label: 'building for the web professionally' },
     { value: 'Full', unit: 'stack', label: 'PHP backends, React frontends' },
     { value: 'API', unit: 'first', label: 'REST services designed to be consumed' },
   ],
@@ -113,7 +113,7 @@ export const experience = [
   {
     company: 'Acumen Capital Market India Ltd.',
     position: 'Software Developer',
-    period: 'November 2023 - Present',
+    period: 'November 2023 – Present',
     location: 'Kochi',
     points: [
       'Build and maintain internal web applications for the business, across customer onboarding and human resources.',

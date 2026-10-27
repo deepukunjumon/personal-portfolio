@@ -13,7 +13,7 @@ export default function Skills() {
     >
       <ul className="grid gap-4 sm:grid-cols-2">
         {skillGroups.map((group, i) => (
-          <Reveal as="li" key={group.title} delay={i * 70} data-tilt className="card flex min-w-0 flex-col p-6 sm:p-8">
+          <Reveal as="li" key={group.title} delay={i * 70} className="card flex min-w-0 flex-col p-6 sm:p-8">
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="text-base font-medium">{group.title}</h3>
               <span className="font-mono text-xs text-muted">0{i + 1}</span>

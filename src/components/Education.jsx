@@ -7,8 +7,8 @@ const formatPeriod = (period) => period.replace(/\s*[-–—]\s*/, ' – ')
 
 export default function Education() {
   return (
-    <Section id="education" index="05" eyebrow="Education" title="Education & certifications.">
-      <Reveal as="ul" data-tilt className="card divide-y divide-line">
+    <Section id="education" index="05" eyebrow="Education" title="Education.">
+      <Reveal as="ul" className="card divide-y divide-line">
         {education.map((item) => (
           <li
             key={`${item.title}-${item.year}`}

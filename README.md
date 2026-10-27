@@ -42,3 +42,7 @@ npm run build
 ```
 
 Upload `dist/` to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, shared hosting).
+
+`npm run build` also prerenders the page into `dist/index.html` (`scripts/prerender.js`), so the HTML contains the full content before any JavaScript runs.
+
+On Vercel, `vercel.json` adds security headers, including a Content-Security-Policy that allows the inline theme script in `index.html` by its hash. If you edit that script, the build fails and prints the new hash to put in `vercel.json`. If you add a service the page talks to (another API or analytics provider), add its domain to `connect-src` there too.

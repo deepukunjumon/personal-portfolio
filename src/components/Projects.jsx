@@ -73,7 +73,7 @@ export default function Projects() {
       index="03"
       eyebrow="Projects"
       title="Selected work."
-      lead="A few projects that show how I approach a problem - what it needed to do, and the decision that made the difference."
+      lead="A few projects that show how I approach a problem — what it needed to do, and the decision that made the difference."
     >
       {projects.length === 0 ? (
         <div className="card border-dashed p-10 text-center">
