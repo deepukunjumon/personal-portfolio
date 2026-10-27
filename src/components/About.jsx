@@ -5,7 +5,7 @@ import { ArrowUpRightIcon } from './Icons.jsx'
 
 export default function About() {
   return (
-    <Section id="about" index="01" eyebrow="About" title="Three years of shipping things people actually use.">
+    <Section id="about" index="01" eyebrow="About" title="Shipping things people actually use, since 2023.">
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
         <Reveal className="space-y-6 text-lg leading-relaxed text-pretty text-muted">
           {about.paragraphs.map((paragraph, i) => (
@@ -22,10 +22,10 @@ export default function About() {
           </p>
         </Reveal>
 
-        <Reveal as="dl" delay={120} data-tilt className="card divide-y divide-line self-start">
+        <Reveal as="dl" delay={120} className="card divide-y divide-line self-start">
           {about.facts.map((fact) => (
             <div key={fact.label} className="flex items-baseline gap-5 p-6">
-              <dt className="w-28 shrink-0 font-display text-4xl leading-none">
+              <dt className="min-w-34 shrink-0 font-display whitespace-nowrap text-4xl leading-none">
                 {fact.value}
                 <span className="ml-1.5 font-mono text-xs tracking-wide text-accent-text">{fact.unit}</span>
               </dt>

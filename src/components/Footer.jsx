@@ -13,7 +13,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="container-page flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted">
+        {/* The year is baked in at build time; the browser may disagree after New Year. */}
+        <p className="text-sm text-muted" suppressHydrationWarning>
           © {new Date().getFullYear()} {profile.name}
         </p>
         <div className="flex flex-wrap items-center gap-1">

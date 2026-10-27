@@ -32,15 +32,16 @@ export default function Hero() {
         <p className="rise eyebrow flex flex-wrap items-center gap-x-3 gap-y-2" style={{ '--i': 0 }}>
           <span className="inline-block size-1.5 rounded-full bg-accent" aria-hidden="true" />
           <span className="text-ink">{profile.role}</span>
-          <span aria-hidden="true" className="text-line-strong">
-            -
+          {/* Hidden on narrow screens, where the stack wraps onto its own line. */}
+          <span aria-hidden="true" className="hidden text-line-strong sm:inline">
+            —
           </span>
           <span>{profile.stack.join(' · ')}</span>
         </p>
 
         <h1
           id="hero-title"
-          className="rise mt-6 font-display text-[clamp(3.5rem,13vw,8rem)] leading-[0.92] tracking-tight"
+          className="mt-6 font-display text-[clamp(3.5rem,13vw,8rem)] leading-[0.92] tracking-tight"
           style={{ '--i': 1 }}
         >
           Deepu <span className="text-accent-text">Kunjumon</span>

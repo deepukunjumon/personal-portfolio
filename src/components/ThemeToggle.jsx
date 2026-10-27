@@ -13,7 +13,8 @@ export default function ThemeToggle() {
       title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       className="grid size-10 place-items-center text-muted transition-colors hover:text-ink"
     >
-      {isDark ? <SunIcon /> : <MoonIcon />}
+      <SunIcon className="hidden dark:block" />
+      <MoonIcon className="dark:hidden" />
     </button>
   )
 }

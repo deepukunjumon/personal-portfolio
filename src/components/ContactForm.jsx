@@ -117,7 +117,7 @@ export default function ContactForm() {
         </span>
         <h3 className="mt-6 font-display text-4xl leading-tight">Message sent.</h3>
         <p className="mt-3 max-w-sm leading-relaxed text-muted">
-          Thanks for reaching out - it’s landed in my inbox and I’ll reply to the address you gave as soon as I can.
+          Thanks for reaching out — it’s landed in my inbox and I’ll reply to the address you gave as soon as I can.
         </p>
         <button type="button" onClick={() => setStatus('idle')} className="btn btn-secondary mt-8">
           Send another message
@@ -172,7 +172,7 @@ export default function ContactForm() {
             <AlertIcon size={17} className="mt-0.5 shrink-0 text-danger" />
             <span>
               {serverError} You can also email me directly at{' '}
-              <a href={`mailto:${profile.email}`} target="_blank" rel="noreferrer" className="link">
+              <a href={`mailto:${profile.email}`} className="link">
                 {profile.email}
               </a>
               .

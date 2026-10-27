@@ -11,6 +11,7 @@
   --color-surface: var(--surface);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
+  --color-field-border: var(--field-border);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
@@ -30,6 +31,7 @@
   --surface: #ffffff;
   --line: #e7e5de;
   --line-strong: #d3d0c6;
+  --field-border: #8f8c84; /* form inputs: 3:1 against the page, as WCAG 1.4.11 asks */
   --ink: #17181a;
   --muted: #5b5e66;
   --accent: #10b981;
@@ -48,6 +50,7 @@
   --surface: #17191c;
   --line: #25282d;
   --line-strong: #353940;
+  --field-border: #63676f; /* form inputs: 3:1 against the page, as WCAG 1.4.11 asks */
   --ink: #ecebe7;
   --muted: #a0a4ac;
   --accent: #10b981;
@@ -132,7 +135,7 @@
   }
 
   .field {
-    @apply block w-full rounded-xl border border-line-strong bg-bg px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted/70 focus:border-accent-text focus:outline-2 focus:outline-offset-0 focus:outline-accent/30;
+    @apply block w-full rounded-xl border border-field-border bg-bg px-4 py-3 text-[15px] text-ink transition-colors placeholder:text-muted focus:border-accent-text focus:outline-2 focus:outline-offset-0 focus:outline-accent/30;
   }
 
   .field[aria-invalid='true'] {

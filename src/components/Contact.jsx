@@ -47,7 +47,7 @@ export default function Contact() {
       lead="Have a role, a project, or a question? Send a message and it comes straight to my inbox."
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_1.35fr] lg:gap-10">
-        <Reveal as="ul" data-tilt className="card divide-y divide-line self-start">
+        <Reveal as="ul" className="card divide-y divide-line self-start">
           {channels.map(({ label, value, href, icon: ChannelIcon, external }) => (
             <li key={label}>
               <a

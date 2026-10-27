@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <a
           href="#top"
-          aria-label={`${profile.name} - back to top`}
+          aria-label={`${profile.name}, back to top`}
           className="font-display text-2xl leading-none tracking-tight"
         >
           {profile.initials}
